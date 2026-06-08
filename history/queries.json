@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Who are the top 3 highest-paid employees in the company",
+        "query": "SELECT salary, name FROM employees ORDER BY salary DESC LIMIT 3"
+    },
+    {
+        "question": "Can you tell me how many employees we have hired since January 1st, 2025?\"",
+        "query": "SELECT COUNT(*) FROM employees WHERE hire_date >= '2025-01-01'"
+    },
+    {
+        "question": "Can you tell me how many employees we have hired since January 1st, 2025?\"",
+        "query": "SELECT COUNT(*) FROM employees WHERE hire_date >= '2025-01-01'"
+    },
+    {
+        "question": "Show all employees whose salary is greater than 50000",
+        "query": "SELECT * FROM employees WHERE salary > 50000"
+    },
+    {
+        "question": "Show all employees whose salary is greater than 50000",
+        "query": "SELECT * FROM employees WHERE salary > 50000"
+    }
+]

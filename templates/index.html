@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        AI SQL Generator
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        AI SQL Generator
+    </h1>
+
+    <form method="POST">
+
+        <textarea
+            name="question"
+            placeholder="Enter SQL request"
+            required>{{ question }}</textarea>
+
+        <select name="dialect">
+
+            <option value="MySQL">
+                MySQL
+            </option>
+
+            <option value="PostgreSQL">
+                PostgreSQL
+            </option>
+
+            <option value="Oracle">
+                Oracle
+            </option>
+
+            <option value="SQL Server">
+                SQL Server
+            </option>
+
+        </select>
+
+        <button type="submit">
+            Generate SQL
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <h2>
+        Generated Query
+    </h2>
+
+    <pre>{{ result["query"] }}</pre>
+
+    <h2>
+        Explanation
+    </h2>
+
+    <p>{{ result["explanation"] }}</p>
+
+    <a class="download-btn"
+       href="{{ url_for('download', query=result['query']) }}">
+        Download SQL
+    </a>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
